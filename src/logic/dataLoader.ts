@@ -7,7 +7,10 @@ Timeframe
 
 const modules = import.meta.glob(
 [
-"../data/EURUSD/H1.ts"
+"../data/EURUSD/H1.ts",
+"../data/EURUSD/H4.ts",
+"../data/EURUSD/D1.ts",
+"../data/EURUSD/W1.ts"
 ]
 );
 
