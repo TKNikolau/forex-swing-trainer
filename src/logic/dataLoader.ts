@@ -1,0 +1,50 @@
+import type {
+SymbolName,
+Timeframe
+} from "../types";
+
+
+
+const modules = import.meta.glob(
+"../data/**/*.ts"
+);
+
+
+
+export async function getData(
+symbol:SymbolName,
+timeframe:Timeframe
+){
+
+
+const path =
+`../data/${symbol}/${timeframe}.ts`;
+
+
+
+const loader =
+modules[path];
+
+
+
+if(!loader){
+
+console.error(
+"DATA NOT FOUND:",
+path
+);
+
+return [];
+
+}
+
+
+
+const module:any =
+await loader();
+
+
+
+return module.DATA ?? [];
+
+}
