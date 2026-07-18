@@ -7,6 +7,9 @@ Timeframe
 
 const modules = import.meta.glob(
 [
+"../data/*/M1.ts",
+"../data/*/M5.ts",
+"../data/*/M15.ts",
 "../data/*/M30.ts",
 "../data/*/H1.ts",
 "../data/*/H4.ts",
